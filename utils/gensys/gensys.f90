@@ -250,7 +250,7 @@ program gensys
                     end do
                 end do                
             end do
-
+            close(666)
             deallocate(x,y,z)
             return
         end subroutine genpos
@@ -282,6 +282,9 @@ program gensys
             
             common /App/ appname
         
+            
+            print *, "Code:",state
+
             select case (state)
 
                 case (0)
@@ -325,27 +328,22 @@ program gensys
                     stop
 
                 case (1)
-                    print *, "Exception",state
                     print *, "Box size unsufficiently big for the atomic radius"
                     stop
 
                 case (2)
-                    print *, "Exception",state
                     print *, "Cannot find [atoms.dat] in the working folder."
                     stop
 
                 case (3)
-                    print *, "Exception",state
                     print *, "Cannot find the element in the database. Retry"
                     stop
 
                 case (4)
-                    print *, "Exception",state
                     print *, "Filling mode is not implemented yet. Retry"
                     stop
 
                 case default
-                    print *, "Exception",state
                     print *, "Unhandled exception! Something is wrong with your"
                     print *, "hardware. This program is too perfect to fail! :D"
                     print *, "Just joking."
