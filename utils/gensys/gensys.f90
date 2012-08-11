@@ -250,7 +250,7 @@ program gensys
                     end do
                 end do                
             end do
-
+            close(666)
             deallocate(x,y,z)
             return
         end subroutine genpos
