@@ -52,7 +52,7 @@ program gensys
 
     ! Global Variables
     ! Not always a good idea, but safe in this case
-    common appname, a_radius, a_mass, a_number, a_name
+    common /App/ appname /Data/ a_radius, a_mass, a_number, a_name
 
     ! Greeter    
     call welcome()
@@ -174,7 +174,7 @@ program gensys
 
 
             ! COMMON VARS
-            character,        dimension(bufsize)    :: appname
+            !character,        dimension(bufsize)    :: appname
             real(8),          dimension(n_elements) :: a_mass, a_radius
             integer(4),       dimension(n_elements) :: a_number
             character(len=3), dimension(n_elements) :: a_name
@@ -193,7 +193,7 @@ program gensys
             ! IMPORTANT: The order of the variables determines the memory
 !                        alignment. If you change this order, something weird
 !                        will happen. (Tony Montana)
-            common appname, a_radius, a_mass, a_number, a_name
+            common /Data/ a_radius, a_mass, a_number, a_name
 
             ! Take the excess integer part of the atomic diameter
             dpart = (a_radius(atom_id) * 2) + 0.5
@@ -237,7 +237,7 @@ program gensys
             end select
             
             allocate(x(sx),y(sy),z(sz))
-            open (666, file = 'full_rd.out', access = 'sequential',&
+            open (666, file = 'structure.out', access = 'sequential',&
                   &status = 'replace', form = 'formatted')
             do i = 1, sx
                 do j = 1, sy
@@ -276,11 +276,11 @@ program gensys
 
             implicit none
 
-            character(len=bufsize) :: app
+            character(len=bufsize) :: appname
             
             integer(4), intent(in) :: state            
             
-            common app
+            common /App/ appname
         
             select case (state)
 
@@ -289,7 +289,7 @@ program gensys
                     print *
                     print *, "Synopsis: "
                     print *
-                    print *, trim(app)," m n o esym (ofile fmode)"
+                    print *, trim(appname)," m n o esym (ofile fmode)"
                     print *
                     print *, "Options: "
                     print *
@@ -316,7 +316,7 @@ program gensys
 
                     print *
                     print *, "Example: "
-                    print *, trim(app), " 26.4 32.345 12.4 Ar structfile 0"
+                    print *, trim(appname), " 26.4 32.345 12.4 Ar structfile 0"
                     print *
                     print *, "It will generate a system where argon atoms are"
                     print *, "randomly displaced in a 26.4 x 32.345 x 12.4 box"
