@@ -14,4 +14,4 @@ all:
 	$(F77) $(F77FLAGS) -o $(TARGET) gensys.f90
 
 clean:
-	rm -rf gensys
+	rm -rf gensys *~

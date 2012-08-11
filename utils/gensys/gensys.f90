@@ -16,7 +16,7 @@
 ! Credits: Axel Kohlmeyer
 !
 !-------------------------------------------------------------------------------
-program gxyz
+program gensys
 
     implicit none
 
@@ -358,4 +358,4 @@ program gxyz
             return    
         end subroutine except
 
-end program gxyz
+end program gensys
