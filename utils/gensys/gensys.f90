@@ -237,6 +237,7 @@ program gensys
             end select
             
             allocate(x(sx),y(sy),z(sz))
+!           This is temporary. It will be implemented in the genfile routine
             open (666, file = 'full_rd.out', access = 'sequential',&
                   &status = 'replace', form = 'formatted')
             do i = 1, sx
