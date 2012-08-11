@@ -1,0 +1,41 @@
+GENSYS v.0.1
+============
+(C) Alfredo Metere 2012. All rights reserved.
+This utility is published under GPLv3 license agreement.
+
+---------------------------------------------------------------
+MD initial system configuration tool. It can currently generate
+linearly  displaced homoatomic systems.  The amount of atoms is
+calculated in function of the atomic radius for the atomic type
+chosen.
+
+The program is structured to be expanded easily  through adding
+the new functionalities as subroutines.
+
+The atomic radii and other details of  interest are read from a
+plain text formatted data file called 'atoms.dat'. In this file
+you can append new atomic types easily. The data file MUST STAY
+IN THE SAME FOLDER AS THE BINARY.
+
+The columns in the data file are respectively:
+1 - Atomic Number
+2 - Element name
+3 - Atomic radius in Angstrom
+4 - Atomic mass in a.m.u.
+
+To  add elements to  the data file,  just follow the example in
+the data file, where  the last two  rows report two hard sphere
+models.
+
+The atomic radii  reported are Van der  Waals radii,  while for
+certain metals, the metallic bond radius has been inserted.
+---------------------------------------------------------------
+
+References:
+
+1 - http://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_%
+28data_page%29
+
+2 - ATOMIC WEIGHTS OF THE ELEMENTS 2005 (IUPAC TECHNICAL REPORT)
+, M. E. WIESER Pure Appl. Chem., V.78, pp. 2051, 2006
+

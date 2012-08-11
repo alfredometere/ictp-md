@@ -1,0 +1,14 @@
+ICTP-MD
+=======
+Tests Folder
+------------
+
+A simple modular MPI+OpenMP classical MD engine written in Fortran 95
+------------------------------------------------------------------------
+
+This folder contains test scripts for ICTP-MD package.  It also includes
+different structure files.
+------------------------------------------------------------------------
+Local Variables:
+mode: text
+End:

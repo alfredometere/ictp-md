@@ -1,0 +1,21 @@
+ICTP-MD
+=======
+Utils Folder
+------------
+
+Some fancy utilities for testing and much more!
+------------------------------------------------------------------------
+
+This folder  includes  miscellaneous  utilities  used for benchmarks and
+testing purposes.
+
+This is the list of the utilities currently available:
+1 - Gensys v.01 (contribution by Alfredo Metere*)
+
+
+* Contact lists
+Alfredo Metere (alfredo.metere@mmk.su.se)
+------------------------------------------------------------------------
+Local Variables:
+mode: text
+End:
