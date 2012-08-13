@@ -237,7 +237,7 @@ program gensys
             end select
             
             allocate(x(sx),y(sy),z(sz))
-            open (666, file = 'structure.out', access = 'sequential',&
+            open (666, file = 'structure.csv', access = 'sequential',&
                   &status = 'replace', form = 'formatted')
             do i = 1, sx
                 do j = 1, sy
@@ -245,8 +245,8 @@ program gensys
                        x(i) = (i-1) + radius * i
                        y(j) = (j-1) + radius * j
                        z(k) = (k-1) + radius * k
-                       write(666,'(F6.4,A1,F6.4,A1,F6.4)')&
-                             & x(i)," ", y(j)," ", z(k)                  
+                       write(666,'(F10.4,A1,F10.4,A1,F10.4)')&
+                             & x(i),',', y(j),',', z(k)                  
                     end do
                 end do                
             end do
